@@ -2,8 +2,7 @@
 async function getChefBirthday(id) {
     const recipeResponse = await fetch(`https://dummyjson.com/recipes/${id}`);
     const recipe = await recipeResponse.json();
-
-    // console segnala che userId non è definito
+    const userId = recipe.data.userId
     const chefResponse = await fetch(`https://dummyjson.com/users/${userId}`);
     const chef = await chefResponse.json();
 
