@@ -1,13 +1,13 @@
-// codice esattamente come da correzione
 async function getChefBirthday(id) {
     const recipeResponse = await fetch(`https://dummyjson.com/recipes/${id}`);
     const recipe = await recipeResponse.json();
-    const userId = recipe.data.userId
+    const userId = recipe.userId
     const chefResponse = await fetch(`https://dummyjson.com/users/${userId}`);
     const chef = await chefResponse.json();
 
-    return chef.data.birthDate;
+    return chef.birthDate;
 }
+
 
 (async () => {
     try {
