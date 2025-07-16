@@ -6,7 +6,7 @@ async function getChefBirthday(id) {
     const chefResponse = await fetch(`https://dummyjson.com/users/${userId}`);
     const chef = await chefResponse.json();
 
-    return chef.birthDate;
+    return chef.data.birthDate;
 }
 
 (async () => {
@@ -16,5 +16,4 @@ async function getChefBirthday(id) {
     } catch (error) {
         console.error("Errore:", error.message);
     }
-    console.log("Errore", error.message)
 })();
